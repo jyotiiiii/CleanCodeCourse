@@ -1,43 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
+    <head>
+        <title>That interview question sample code</title>
+        <meta
+            http-equiv="Content-Type"
+            content="text/html; charset=iso-8859-1"
+        />
+        <meta http-equiv="Content-Language" content="EN" />
+        <meta
+            name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1.0"
+        />
+    </head>
+    <body>
+        <h1>Flower popularity poll</h1>
+        <script>
+            const weekOnePlants = [
+                'Violet',
+                'Lily',
+                'Snowdrop',
+                'Rose',
+                'Poppy',
+                'Daffodil',
+                'Bluebell'
+            ];
+            const favourites = [];
+        </script>
+        <p>Select your very favourite flower from the list.</p>
+        <select id="favouriteOne" onchange="myFunction1(this)">
+            <option value="Violet">Violet</option>
+            <option value="Lilly">Lilly</option>
+            <option value="Snowdrop">Snowdrop</option>
+            <option value="Rose">Rose</option>
+            <option value="Poppy">Poppy</option>
+            <option value="Daffodil">Daffodil</option>
+            <option value="Bluebell">Bluebell</option>
+        </select>
+        <p>Select your almost favourite flower from the list.</p>
+        <select id="favouriteTwo" onchange="myFunction2(this)">
+            <option value="Violet">Violet</option>
+            <option value="Lilly">Lilly</option>
+            <option value="Snowdrop">Snowdrop</option>
+            <option value="Rose">Rose</option>
+            <option value="Poppy">Poppy</option>
+            <option value="Daffodil">Daffodil</option>
+            <option value="Bluebell">Bluebell</option>
+        </select>
+        <p>Select your 3rd favourite flower from the list.</p>
+        <select id="favouriteThree" onchange="myFunction3(this)">
+            <option value="Violet">Violet</option>
+            <option value="Lilly">Lilly</option>
+            <option value="Snowdrop">Snowdrop</option>
+            <option value="Rose">Rose</option>
+            <option value="Poppy">Poppy</option>
+            <option value="Daffodil">Daffodil</option>
+            <option value="Bluebell">Bluebell</option>
+        </select>
+        <p>Select your 4th favourite flower from the list.</p>
+        <select id="favouriteFour" onchange="myFunction4(this)">
+            <option value="Violet">Violet</option>
+            <option value="Lilly">Lilly</option>
+            <option value="Snowdrop">Snowdrop</option>
+            <option value="Rose">Rose</option>
+            <option value="Poppy">Poppy</option>
+            <option value="Daffodil">Daffodil</option>
+            <option value="Bluebell">Bluebell</option>
+        </select>
+        <button onclick="dostuff()">Send my favourites</button>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+        <script>
+            function myFunction1(e) {
+                x = e.selectedIndex;
+            }
+            function myFunction2(e) {
+                y = e.selectedIndex;
+            }
+            function myFunction3(e) {
+                w = e.selectedIndex;
+            }
+            function myFunction4(e) {
+                z = e.selectedIndex;
+            }
+        </script>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        <script>
+            function dostuff() {
+                if (x != y) {
+                    if (y == x) {
+                        console.log('violet');
+                    } else {
+                        if (x != w && w != z && w != y) {
+                            console.log('lily');
+                        } else {
+                            console.log('snowdrop');
+                        }
+                    }
+                } else {
+                    if (x == y || x == z) {
+                        if (x == y && y == z) {
+                            console.log('rose');
+                        } else {
+                            if (y == z) {
+                                console.log('poppy');
+                            } else {
+                                console.log('daffodil');
+                            }
+                        }
+                    } else {
+                        console.log('bluebell');
+                    }
+                }
+                //ajax code to send stuff to server for analysis
+            }
+        </script>
+    </body>
 </html>
